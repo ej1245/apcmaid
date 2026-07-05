@@ -13,3 +13,9 @@ License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: bakery-and-pastry
 Tags: blog, food-and-drink, e-commerce, one-column, two-columns, block-patterns, block-styles, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-site-editing, full-width-template, sticky-post, style-variations, template-editing, threaded-comments, translation-ready, wide-blocks
 */
+/* Removes the grey tint from the header banner globally */
+div.has-background-dim,
+.has-background-dim {
+    background-color: transparent !important;
+    opacity: 0 !important;
+}

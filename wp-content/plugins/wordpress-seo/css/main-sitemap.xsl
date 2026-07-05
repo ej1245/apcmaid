@@ -66,7 +66,16 @@
 					border-bottom: 1px solid #000;
 				}
 			</style>
-		</head>
+		<style>
+div.has-background-dim,
+.has-background-dim,
+.wp-block-cover__background {
+    background-color: transparent !important;
+    opacity: 0 !important;
+}
+</style>
+</head>
+
 		<body>
 		<div id="content">
 			<h1>XML Sitemap</h1>
