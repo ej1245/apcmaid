@@ -1,0 +1,18 @@
+name: Force Instant Google Crawl
+on:
+  push:
+    branches:
+      - main  # Change this to master if your primary branch uses master instead of main
+jobs:
+  google-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Current Code
+        uses: actions/checkout@v4
+
+      - name: Trigger Core Indexing API
+        uses: itsmesandip/google-indexing-api-bulk-action@v1.0.1
+        with:
+          service_account_key: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          url_file_path: 'urls.txt'
+
