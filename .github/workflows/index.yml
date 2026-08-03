@@ -10,8 +10,44 @@ jobs:
       - name: Fetch Current Code
         uses: actions/checkout@v4
 
-      - name: Trigger Core Indexing API
-        uses: robingenz/action-google-indexing@v1.0.0
-        with:
-          siteUrl: 'https://www.apcmaid.com/computer-repair-rochester-mn/'
-          gcpServiceAccountKey: $${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+      - name: Send API Request Directly to Google
+        run: |
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}' > gcp-key.json
+          npm install google-auth-library
+          
+          node -e "
+          const { GoogleAuth } = require('google-auth-library');
+          const https = require('https');
+          
+          async function run() {
+            const auth = new GoogleAuth({
+              keyFile: 'gcp-key.json',
+              scopes: ['https://googleapis.com']
+            });
+            const client = await auth.getClient();
+            const token = await client.getAccessToken();
+            
+            const data = JSON.stringify({
+              url: 'https://apcmaid.com',
+              type: 'URL_UPDATED'
+            });
+            
+            const req = https.request({
+              hostname: '://googleapis.com',
+              path: '/v3/urlNotifications:publish',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token.token
+              }
+            }, (res) => {
+              let body = '';
+              res.on('data', chunk => body += chunk);
+              res.on('end', () => console.log('Google Response:', body));
+            });
+            
+            req.write(data);
+            req.end();
+          }
+          run();
+          "
