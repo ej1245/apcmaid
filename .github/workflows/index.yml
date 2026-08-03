@@ -12,7 +12,9 @@ jobs:
 
       - name: Send API Request Directly to Google
         run: |
-          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}' > gcp-key.json
+          cat << 'EOF' > gcp-key.json
+          ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          EOF
           npm install google-auth-library
           
           node -e "
