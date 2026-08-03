@@ -13,5 +13,5 @@ jobs:
       - name: Trigger Core Indexing API
         uses: robingenz/action-google-indexing@v1.0.0
         with:
-          siteUrl: 'https://apcmaid.com'
+          siteUrl: 'https://www.apcmaid.com/computer-repair-rochester-mn/'
           gcpServiceAccountKey: $${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
