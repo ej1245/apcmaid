@@ -2,7 +2,7 @@ name: Force Instant Google Crawl
 on:
   push:
     branches:
-      - main  # Change this to master if your primary branch uses master instead of main
+      - main
 jobs:
   google-index:
     runs-on: ubuntu-latest
@@ -10,9 +10,46 @@ jobs:
       - name: Fetch Current Code
         uses: actions/checkout@v4
 
-      - name: Trigger Core Indexing API
-        uses: itsmesandip/google-indexing-api-bulk-action@v1.0.1
-        with:
-          service_account_key: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
-          url_file_path: 'urls.txt'
-
+      - name: Send API Request Directly to Google
+        run: |
+          cat << 'EOF' > gcp-key.json
+          ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+          EOF
+          npm install google-auth-library
+          
+          node -e "
+          const { GoogleAuth } = require('google-auth-library');
+          const https = require('https');
+          
+          async function run() {
+            const auth = new GoogleAuth({
+              keyFile: 'gcp-key.json',
+              scopes: ['https://googleapis.com']
+            });
+            const client = await auth.getClient();
+            const token = await client.getAccessToken();
+            
+            const data = JSON.stringify({
+              url: 'https://apcmaid.com',
+              type: 'URL_UPDATED'
+            });
+            
+            const req = https.request({
+              hostname: '://googleapis.com',
+              path: '/v3/urlNotifications:publish',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token.token
+              }
+            }, (res) => {
+              let body = '';
+              res.on('data', chunk => body += chunk);
+              res.on('end', () => console.log('Google Response:', body));
+            });
+            
+            req.write(data);
+            req.end();
+          }
+          run();
+          "
