@@ -230,7 +230,15 @@ body,td,th {
     font-weight: normal;
 }
 </style>
-</head>
+<style id="codex-uniform-text-margins">
+.wp-site-blocks > main:not(#top) p,
+.wp-site-blocks > main#top > p,
+.wp-site-blocks > .wp-block-columns p,
+.wp-site-blocks > .wp-block-group p {
+  margin-left: var(--wp--preset--spacing--superbspacing-xsmall);
+  margin-right: var(--wp--preset--spacing--superbspacing-xsmall);
+}
+</style></head>
 
 
 <body data-rsssl="1" class="wp-singular page-template page-template-wp-custom-template-contact-us page page-id-466 wp-custom-logo wp-embed-responsive wp-theme-bakery-and-pastry wp-child-theme-the-coffee-shop mega-menu-max-mega-menu-1 mega-menu-max-mega-menu-2">
