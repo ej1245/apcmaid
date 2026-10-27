@@ -170,7 +170,28 @@ div.has-background-dim,
     opacity: 0 !important;
 }
 </style>
-<style id="codex-mobile-16px-gutter">@media (max-width: 781px) { .wp-site-blocks > :not(header):not(footer) .wp-block-group, .wp-site-blocks > :not(header):not(footer) .wp-block-columns, .wp-site-blocks > :not(header):not(footer) .wp-block-column { box-sizing: border-box; padding-left: 0 !important; padding-right: 0 !important; } .wp-site-blocks > :not(header):not(footer) p, .wp-site-blocks > :not(header):not(footer) h1, .wp-site-blocks > :not(header):not(footer) h2, .wp-site-blocks > :not(header):not(footer) h3, .wp-site-blocks > :not(header):not(footer) h4, .wp-site-blocks > :not(header):not(footer) [style*="text-align: center"] { box-sizing: border-box; width: calc(100% - 32px) !important; max-width: calc(100% - 32px) !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: auto !important; margin-right: auto !important; } .wp-site-blocks > :not(header):not(footer) ul, .wp-site-blocks > :not(header):not(footer) ol { box-sizing: border-box; width: calc(100% - 32px); max-width: calc(100% - 32px); margin-left: auto !important; margin-right: auto !important; padding-left: 20px; padding-right: 0; } .wp-site-blocks > :not(header):not(footer) p[style*="position:absolute"] { width: 100% !important; max-width: none !important; margin: 0 !important; } .wp-site-blocks > :not(header):not(footer) img, .wp-site-blocks > :not(header):not(footer) iframe, .wp-site-blocks > :not(header):not(footer) video { max-width: 100%; } }</style><style id="codex-contact-button-full-width">.wp-block-button.codex-contact-full-width{box-sizing:border-box;width:100%!important;max-width:100%!important;flex:0 0 100%!important}.wp-block-button.codex-contact-full-width>.wp-block-button__link{box-sizing:border-box;display:block!important;width:100%!important;max-width:100%!important;text-align:center}</style><style id="codex-pcmaid-banner-alignment">.wp-block-image.codex-pcmaid-banner{margin-top:16px!important}.wp-block-cover:has(.wp-block-image.codex-pcmaid-banner){align-items:flex-start!important}.wp-block-cover__inner-container:has(> .wp-block-image.codex-pcmaid-banner){justify-content:flex-start!important}</style></head>
+<style id="codex-mobile-16px-gutter">@media (max-width: 781px) { .wp-site-blocks > :not(header):not(footer) .wp-block-group, .wp-site-blocks > :not(header):not(footer) .wp-block-columns, .wp-site-blocks > :not(header):not(footer) .wp-block-column { box-sizing: border-box; padding-left: 0 !important; padding-right: 0 !important; } .wp-site-blocks > :not(header):not(footer) p, .wp-site-blocks > :not(header):not(footer) h1, .wp-site-blocks > :not(header):not(footer) h2, .wp-site-blocks > :not(header):not(footer) h3, .wp-site-blocks > :not(header):not(footer) h4, .wp-site-blocks > :not(header):not(footer) [style*="text-align: center"] { box-sizing: border-box; width: calc(100% - 32px) !important; max-width: calc(100% - 32px) !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: auto !important; margin-right: auto !important; } .wp-site-blocks > :not(header):not(footer) ul, .wp-site-blocks > :not(header):not(footer) ol { box-sizing: border-box; width: calc(100% - 32px); max-width: calc(100% - 32px); margin-left: auto !important; margin-right: auto !important; padding-left: 20px; padding-right: 0; } .wp-site-blocks > :not(header):not(footer) p[style*="position:absolute"] { width: 100% !important; max-width: none !important; margin: 0 !important; } .wp-site-blocks > :not(header):not(footer) img, .wp-site-blocks > :not(header):not(footer) iframe, .wp-site-blocks > :not(header):not(footer) video { max-width: 100%; } }</style><style id="codex-contact-button-full-width">.wp-block-button.codex-contact-full-width{box-sizing:border-box;width:100%!important;max-width:100%!important;flex:0 0 100%!important}.wp-block-button.codex-contact-full-width>.wp-block-button__link{box-sizing:border-box;display:block!important;width:100%!important;max-width:100%!important;text-align:center}</style><style id="codex-pcmaid-banner-alignment">.wp-block-image.codex-pcmaid-banner{margin-top:16px!important}.wp-block-cover:has(.wp-block-image.codex-pcmaid-banner){align-items:flex-start!important}.wp-block-cover__inner-container:has(> .wp-block-image.codex-pcmaid-banner){justify-content:flex-start!important}</style><style id="tablet-component-image-layout">
+@media (min-width: 600px) and (max-width: 900px) {
+  .component-image-row {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start !important;
+  }
+  .component-image-row .component-image-card {
+    box-sizing: border-box;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  .component-image-row .component-image-card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+</style>
+</head>
 
 
 <body data-rsssl="1" class="wp-singular page-template page-template-wp-custom-template-computer-updates page page-id-524 wp-custom-logo wp-embed-responsive wp-theme-bakery-and-pastry wp-child-theme-the-coffee-shop mega-menu-max-mega-menu-1 mega-menu-max-mega-menu-2">
@@ -222,28 +243,28 @@ If you have a computer that is older it could benefit from an upgrade to a SSD d
 <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px; margin: 0 auto 10px; padding: 0 15px;">
 
  <!-- Image Row Container -->
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; max-width: 1200px; margin: 0 auto 10px; padding: 0 15px;">
+<div class="component-image-row" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; max-width: 1200px; margin: 0 auto 10px; padding: 0 15px;">
 
   <!-- Column 1: No Boot Device Screen -->
-  <div style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
+  <div class="component-image-card" style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
     <img src="/wp-content/uploads/2025/06/noboot.webp" alt="no boot device" style="width: 100%; height: auto; display: block; border-radius: 4px; margin-bottom: 8px;">
     <p style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; font-weight: bold; margin: 5px 0 0 0;">Failing Drive Errors</p>
   </div>
 
   <!-- Column 2: Mac Fail System Restore Screen -->
-  <div style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
+  <div class="component-image-card" style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
     <img src="/wp-content/uploads/2025/06/macfail.webp" alt="Restore Mac System" style="width: 100%; height: auto; display: block; border-radius: 4px; margin-bottom: 8px;">
     <p style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; font-weight: bold; margin: 5px 0 0 0;">System Failures</p>
   </div>
 
   <!-- Column 3: OS Options (Monterey / Windows 11) -->
-  <div style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
+  <div class="component-image-card" style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
     <img src="/wp-content/uploads/2025/06/monterey.webp" alt="Windows and Mac operating system upgrades and installs" style="width: 100%; height: auto; display: block; border-radius: 4px; margin-bottom: 8px;">
     <p style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; font-weight: bold; margin: 5px 0 0 0;">OS Installs & Updates</p>
   </div>
 
   <!-- Column 4: M.2 & 2.5" SSD Combo Image -->
-  <div style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
+  <div class="component-image-card" style="flex: 1; min-width: 200px; max-width: 250px; margin: 10px; text-align: center;">
     <img src="/wp-content/uploads/2025/06/SSD-disk-drive-1-300x224.png.webp" alt="SSD replacement and upgrades" style="width: 100%; height: auto; display: block; border-radius: 4px; margin-bottom: 8px;">
     <p style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; font-weight: bold; margin: 5px 0 0 0;">SSD Replacements</p>
   </div>
@@ -370,4 +391,5 @@ If you have a computer that is older it could benefit from an upgrade to a SSD d
 <script src="https://www.apcmaid.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.6.2" id="megamenu-js"></script>
 <p class="codex-back-to-top" style="text-align:center;margin:16px auto;padding:6px 10px;"><a href="#top" style="display:inline-block;background-color:#1f5fb4;color:#fff;font-size:13px;font-weight:700;text-decoration:none;border-radius:999px;padding:6px 12px;">↑ Back to top</a></p></body>
 </html>
+
 
