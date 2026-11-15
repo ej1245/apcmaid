@@ -1041,5 +1041,26 @@ setTimeout(function () {
 }, widgetDelay);
 </script>
 <!-- End of Tawk.to Script -->
-</body>
+<script id="pcmaid-android-autoplay-fix">
+(function () {
+  var attempts = 0;
+  var timer = window.setInterval(function () {
+    var slider = document.getElementById("sp-testimonial-free-201");
+    var swiper = slider && slider.swiper;
+    attempts += 1;
+    if (swiper && swiper.params && swiper.params.autoplay) {
+      swiper.params.autoplay.disableOnInteraction = false;
+      if (swiper.originalParams && swiper.originalParams.autoplay) {
+        swiper.originalParams.autoplay.disableOnInteraction = false;
+      }
+      if (swiper.autoplay && typeof swiper.autoplay.start === "function") {
+        swiper.autoplay.start();
+      }
+      window.clearInterval(timer);
+    } else if (attempts >= 200) {
+      window.clearInterval(timer);
+    }
+  }, 100);
+}());
+</script></body>
 </html>
